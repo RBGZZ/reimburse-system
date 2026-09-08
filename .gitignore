@@ -26,3 +26,6 @@ shot-*.png
 .edgeprof
 _screenshot.html
 test-*.js
+
+# 演示录制脚本（仅本地使用，不进仓库）
+演示脚本.md
