@@ -14,18 +14,35 @@
 
 ---
 
-## 二、快速开始
+## 二、环境要求与快速启动
 
+### 2.1 环境要求
+- **Node.js ≥ 22.5**（本项目依赖内置 `node:sqlite`；推荐 v22 / v24）。未安装请到 <https://nodejs.org> 下载 LTS 版后安装。
+- **无需 `npm install`**（零第三方依赖）。
+- 在项目**根目录**运行。
+
+### 2.2 Windows 一键启动（推荐）
+1. 双击运行 **`start.bat`**。
+2. 脚本会自动：检查 Node → 若无 `config.json` 则从 `config.example.json` 生成 → 后台启动服务 → 打开浏览器。
+3. 停止服务：在“报销云服务”窗口按 `Ctrl+C`；默认访问 **http://127.0.0.1:3300**。
+
+> 提示：若要用「智能问答」，请先打开 `start.bat` 生成或已有的 `config.json`，填入 DeepSeek API Key 后重启；留空则聊天不可用，但不影响其它功能。
+
+### 2.3 手动启动（任意系统）
 ```bash
-cd "D:\manage project"
+cd <项目目录>
 npm start        # 或 node server.js
 ```
-
 启动后访问：**http://127.0.0.1:3300**
 
-> 首次启动会自动创建 5 个演示账号。**是否注入示例报销单**由 `config.json` 的 `seedDemoData` 控制：`true` 会注入若干条覆盖各状态的演示单；`false` 从空库开始（当前配置文件已设为 `false`，便于录制演示）。
+macOS / Linux 同样用 `npm start`（本系统不依赖 Windows 特性）。
 
-### 演示账号（密码均为 `123456`）
+### 2.4 首次启动会自动
+- 创建 `data/`（SQLite 数据库 + 上传目录）。
+- 初始化 5 个演示账号（密码均 `123456`）。
+- 是否注入示例报销单由 `config.json` 的 `seedDemoData` 控制：`true` 注入、`false` 空库（`config.example.json` 默认 `true`）。
+
+### 2.5 测试账号（密码均为 `123456`）
 
 | 角色 | 用户名 | 姓名 |
 | --- | --- | --- |
@@ -36,6 +53,17 @@ npm start        # 或 node server.js
 | 管理员 | `admin` | 系统管理员 |
 
 登录页提供“一键填充”，点一下即填入账号密码。
+
+### 2.6 换端口
+默认 `3300`。若被占用可换：
+- Windows：`set PORT=3310 && node server.js`
+- macOS / Linux：`PORT=3310 node server.js`
+
+### 2.7 常见问题
+- **端口被占用**：按 2.6 换端口，或先停止已运行的服务。
+- **`config.json` 相关**：从未配置时可复制 `config.example.json` 为 `config.json`；「智能问答」需在其中填入 DeepSeek API Key。
+- **Node 版本过低**：升级 Node ≥ 22.5（需内置 `node:sqlite`）。
+- **浏览器打不开**：手动访问 `http://127.0.0.1:3300`（确认服务窗口无报错）。
 
 ---
 
