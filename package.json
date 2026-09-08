@@ -1,0 +1,13 @@
+{
+  "name": "reimburse-system",
+  "version": "1.0.0",
+  "description": "财务报销管理系统（演示版）",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

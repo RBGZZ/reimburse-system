@@ -1,0 +1,6 @@
+# 统一换行为 LF（跨平台协作更稳定）
+* text=auto eol=lf
+
+# 二进制文件
+*.png binary
+*.jpg binary

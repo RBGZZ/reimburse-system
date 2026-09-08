@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>报销云 · 财务报销管理系统</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BE%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- 详情弹窗 -->
+  <div class="modal-layer" id="detailModal" hidden>
+    <div class="modal" id="detailModalBody"></div>
+  </div>
+
+  <!-- 表单弹窗 -->
+  <div class="modal-layer" id="formModal" hidden>
+    <div class="modal modal-lg" id="formModalBody"></div>
+  </div>
+
+  <!-- 图片大图预览 -->
+  <div class="modal-layer" id="imageModal" hidden>
+    <div class="image-viewer" id="imageModalBody"></div>
+  </div>
+
+  <!-- 驳回原因弹窗 -->
+  <div class="modal-layer" id="rejectModal" hidden>
+    <div class="modal modal-sm" id="rejectModalBody"></div>
+  </div>
+
+  <!-- 账号管理弹窗 -->
+  <div class="modal-layer" id="userModal" hidden>
+    <div class="modal modal-sm" id="userModalBody"></div>
+  </div>
+
+  <!-- 对话配置弹窗 -->
+  <div class="modal-layer" id="chatConfigModal" hidden>
+    <div class="modal modal-sm" id="chatConfigModalBody"></div>
+  </div>
+
+  <div class="toast-stack" id="toastStack"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
